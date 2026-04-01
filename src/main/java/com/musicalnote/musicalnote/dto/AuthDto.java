@@ -18,6 +18,7 @@ public class AuthDto {
         @NotBlank
         @Size(min = 6)
         private String password;
+        private Role role;
     }
 
     @Data
