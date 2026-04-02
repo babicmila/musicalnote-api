@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -84,6 +85,9 @@ public class RentalService {
         }
         if (rental.getStatus() != RentalStatus.PENDING) {
             throw new BusinessException("Only PENDING rentals can be cancelled");
+        }
+        if (LocalDate.now().isAfter(rental.getStartDate().minusDays(1))) {
+            throw new BusinessException("Cannot cancel less than 24 hours before the start date");
         }
 
         rental.setStatus(RentalStatus.CANCELLED);
