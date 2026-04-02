@@ -138,7 +138,7 @@ To register as an admin, include `"role": "ADMIN"` in the register request body.
   "token": "eyJhbGci...",
   "name": "Jane Doe",
   "email": "jane@email.com",
-  "role": "STUDENT"
+  "role": "STUDENT or ADMIN depending on registration"
 }
 ```
 
