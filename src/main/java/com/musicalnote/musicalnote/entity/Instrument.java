@@ -34,7 +34,7 @@ public class Instrument {
     private String imageUrl;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "instrument_condition", nullable = false)
     private Condition condition;
 
     @Column(nullable = false)

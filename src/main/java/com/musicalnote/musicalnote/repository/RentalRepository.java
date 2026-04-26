@@ -17,17 +17,16 @@ public interface RentalRepository extends JpaRepository<Rental, Long> {
 
     // Check for overlapping rentals on an instrument (for conflict detection)
     @Query("""
-        SELECT COUNT(r) > 0 FROM Rental r
-        WHERE r.instrument.id = :instrumentId
-        AND r.status IN ('PENDING', 'ACTIVE')
-        AND r.startDate <= :endDate
-        AND r.endDate >= :startDate
-    """)
+                SELECT COUNT(r) > 0 FROM Rental r
+                WHERE r.instrument.id = :instrumentId
+                AND r.status IN ('PENDING', 'ACTIVE')
+                AND r.startDate <= :endDate
+                AND r.endDate >= :startDate
+            """)
     boolean existsOverlappingRental(
             @Param("instrumentId") Long instrumentId,
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate
     );
 
-    boolean existsByRentalAndUserIdAndStatus(Long rentalId, Long userId, RentalStatus status);
 }
