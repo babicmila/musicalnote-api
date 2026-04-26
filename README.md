@@ -2,10 +2,10 @@
 
 **MusicalNote** is a RESTful API for renting musical instruments, built with Java and Spring Boot. Students and beginners can browse available instruments, book rentals, and leave reviews. Admins manage the inventory and oversee all bookings.
 
-This project was built as a portfolio piece to demonstrate production-level backend development skills including JWT security, role-based access control, business logic enforcement, and clean layered architecture.
+This project was built as a portfolio piece to demonstrate production-level backend development skills, including JWT security, role-based access control, business logic enforcement, and clean layered architecture.
 
 
-- Implemented a full REST API with 18 endpoints across 4 resources (instruments, rentals, reviews, auth).
+- Implemented a full REST API with 18 endpoints across 4 resources (instruments, rentals, reviews, and authentication).
 - Built a structured Exception handling layer covering 5 specific exception types, reducing generic error messages by 80% and returning typed, actionable error responses for every failure scenario. 
 - Utilized JSON Web Token (JWT) for an authentication system with role-based access control (STUDENT / ADMIN), securing 100% of non-public endpoints against unauthorized access. 
 - Achieved 85% service layer test coverage across 4 service classes with 25+ unit tests using JUnit 5 and Mockito, validating business rules including rental conflict detection and review eligibility guards. 
@@ -21,23 +21,6 @@ This project was built as a portfolio piece to demonstrate production-level back
 - Leave reviews only after a completed rental
 - Structured exception handling with descriptive error responses
 - Full unit test coverage across service and controller layers
-
----
-
-## Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| Java 21 | Programming language |
-| Spring Boot 3.2 | Application framework |
-| Spring Security | Authentication and authorization |
-| JWT (jjwt 0.11.5) | Token-based security |
-| MySQL 8 | Relational database |
-| Docker | Database containerization |
-| JPA / Hibernate | ORM and database interaction |
-| Lombok | Boilerplate reduction |
-| JUnit 5 + Mockito | Unit testing |
-| Maven | Build and dependency management |
 
 ---
 
